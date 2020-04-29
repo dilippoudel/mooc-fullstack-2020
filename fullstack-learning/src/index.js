@@ -10,25 +10,43 @@ const Button = ({ eventHandler, text }) => {
 // Stastics component
 
 const Stastics = ({ good, neutral, bad, all }) => {
-    if(!all){
-        return (
-            <div>
-                <h3>Stastics</h3>
-                No feedback given
-            </div>
-        )
-    }else
-  return (
-    <>
-      <h3>Stastics</h3>
-      <p>Good {good}</p>
-      <p>Neutral {neutral}</p>
-      <p>Bad {bad}</p>
-      <p>All {all}</p>
-      <p>average {(good - bad) / all}</p>
-      <p>positive {(good / all) * 100}</p>
-    </>
-  );
+  if (!all) {
+    return (
+      <div>
+        <h3>Stastics</h3>
+        No feedback given
+      </div>
+    );
+  } else
+    return (
+      <>
+        <h3>Stastics</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td>good</td>
+              <td>{good}</td>
+            </tr>
+            <tr>
+              <td>neutral</td>
+              <td>{neutral}</td>
+            </tr>
+            <tr>
+              <td>bad</td>
+              <td>{bad}</td>
+            </tr>
+            <tr>
+              <td>average</td>
+              <td>{(good-bad)/(all)}</td>
+            </tr>
+            <tr>
+              <td>positive </td>
+              <td>{(good/all)*100}</td>
+            </tr>
+          </tbody>
+        </table>
+      </>
+    );
 };
 
 // Parent- App Component
