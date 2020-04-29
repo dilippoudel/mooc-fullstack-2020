@@ -10,9 +10,17 @@ const Button = ({ eventHandler, text }) => {
 // Stastics component
 
 const Stastics = ({ good, neutral, bad, all }) => {
+    if(!all){
+        return (
+            <div>
+                <h3>Stastics</h3>
+                No feedback given
+            </div>
+        )
+    }else
   return (
     <>
-      <h3>Stastifs</h3>
+      <h3>Stastics</h3>
       <p>Good {good}</p>
       <p>Neutral {neutral}</p>
       <p>Bad {bad}</p>
